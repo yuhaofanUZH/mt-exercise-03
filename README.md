@@ -58,9 +58,11 @@ Download and preprocess data: (You do not need to clone PyTorch examples cause t
 
     ./scripts/download_data.sh
 
-Train 5 models with different dropout rates and then log and plot, to compare model efficiency: (you will find the log and plot files in log_plot_file folder.)
+Train five models with varying dropout rates, then log results and generate plots to compare model efficiency:
 
     ./scripts/train_log_plot.sh
+    
+(Note: Logs and plots will be stored in the log_plot_file directory)
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
