@@ -10,15 +10,32 @@ This repo shows how to train neural language models using [Pytorch example code]
 
     `pip install virtualenv`
     
-# File Changed
-Changed download_data.sh to download the new custom dataset - Arabian Nights, and adjusted split numbers according to proportion of the given example split numbers.
-Changed generate.sh to modify the directory settings and generating parameters.
-Changed install_packages.sh to add pandas for logging model perplexity and delete the code to clone Pytorch examples.
-Rename train.sh to train_log_plot.sh which will further create log files and plot files after running.
-Push the modified directory word_language_model so we do not need to clone pytorch examples.
-Changed word_language_model/main.py to add the function for logging perplexity.
-Add the new module word_language_model/plot.py to plot the csv result for visual comparison.
-You can find more specific changes on the respective script files, in which new comments added.
+# File Changes
+
+- **download_data.sh**
+  - Changed to download the new custom dataset - Arabian Nights.
+  - Adjusted split numbers according to the proportion of the given example split numbers.
+
+- **generate.sh**
+  - Modified the directory settings and generating parameters.
+
+- **install_packages.sh**
+  - Added pandas for logging model perplexity.
+  - Removed the code to clone Pytorch examples.
+
+- **train.sh** (renamed to train_log_plot.sh)
+  - Renamed to better reflect its new functionality, which now includes creating log files and plot files after running.
+
+- **word_language_model**
+  - Pushed the modified directory so there is no need to clone Pytorch examples.
+  - **main.py**
+    - Added a function for logging perplexity.
+  - **plot.py**
+    - Added to plot the CSV result for visual comparison.
+
+- **General Note**
+  - You can find more specific changes in the respective script files, where new comments have been added.
+
 
 # Steps
 
