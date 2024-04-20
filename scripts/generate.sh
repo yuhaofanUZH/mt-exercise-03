@@ -6,7 +6,7 @@ base=$(realpath $scripts/..)
 models=$base/models
 data=$base/data
 samples=$base/samples
-word_language_model = $base/word_language_model
+word_language_model=$base/word_language_model
 
 mkdir -p $samples
 

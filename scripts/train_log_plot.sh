@@ -6,8 +6,8 @@ base=$(realpath $scripts/..)
 models=$base/models
 data=$base/data
 tools=$base/tools
-log_plot_file = $base/log_plot_file
-word_language_model = $base/word_language_model
+log_plot_file=$base/log_plot_file
+word_language_model=$base/word_language_model
 
 mkdir -p $models
 mkdir -p $log_plot_file

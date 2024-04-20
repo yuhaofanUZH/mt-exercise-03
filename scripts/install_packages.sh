@@ -8,7 +8,9 @@ mkdir -p $tools
 
 echo "Make sure this script is executed AFTER you have activated a virtualenv"
 
-pip install numpy torch sacremoses nltk
+# add package pandas for logging model perplexity
+
+pip install numpy torch sacremoses nltk pandas
 
 # install Moses scripts for preprocessing
 
