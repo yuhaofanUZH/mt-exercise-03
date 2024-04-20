@@ -14,6 +14,5 @@ pip install numpy torch sacremoses nltk
 
 git clone https://github.com/bricksdont/moses-scripts $tools/moses-scripts
 
-# install pytorch examples
+# You do not need to install pytorch examples cause the modified world language model was already pushed and ready to use
 
-git clone https://github.com/pytorch/examples $tools/pytorch-examples

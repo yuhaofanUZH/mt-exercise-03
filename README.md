@@ -27,17 +27,17 @@ Download and install required software:
 
     ./scripts/install_packages.sh
 
-Download and preprocess data:
+Download and preprocess data: (You do not need to clone PyTorch examples cause the modified world language model folder was already pushed and ready to use)
 
     ./scripts/download_data.sh
 
-Train a model:
+Train 5 models with different dropout rates and then log and plot to compare model efficiency:
 
-    ./scripts/train.sh
+    ./scripts/train_log_plot.sh
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
-Generate (sample) some text from a trained model with:
+Generate (sample) some text from the trained model with dropout rate 0.4 (which usually has the lowest test perplexity):
 
     ./scripts/generate.sh
 
