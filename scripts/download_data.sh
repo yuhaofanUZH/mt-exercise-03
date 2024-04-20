@@ -10,7 +10,6 @@ mkdir -p $data
 tools=$base/tools
 
 # link default training data for easier access
-
 mkdir -p $data/wikitext-2
 
 for corpus in train valid test; do
@@ -18,26 +17,23 @@ for corpus in train valid test; do
     ln -snf $absolute_path $data/wikitext-2/$corpus.txt
 done
 
-# download a different interesting data set!
+# Download the new custom dataset - Arabian Nights
+mkdir -p $data/arabian
+mkdir -p $data/arabian/raw
 
-mkdir -p $data/grimm
-
-mkdir -p $data/grimm/raw
-
-wget https://www.gutenberg.org/files/52521/52521-0.txt
-mv 52521-0.txt $data/grimm/raw/tales.txt
+# The link of the new custom dataset
+wget https://www.gutenberg.org/cache/epub/8655/pg8655.txt -O $data/arabian/raw/nights.txt
 
 # preprocess slightly
-
-cat $data/grimm/raw/tales.txt | python $base/scripts/preprocess_raw.py > $data/grimm/raw/tales.cleaned.txt
+cat $data/arabian/raw/nights.txt | python $base/scripts/preprocess_raw.py > $data/arabian/raw/nights.cleaned.txt
 
 # tokenize, fix vocabulary upper bound
-
-cat $data/grimm/raw/tales.cleaned.txt | python $base/scripts/preprocess.py --vocab-size 5000 --tokenize --lang "en" --sent-tokenize > \
-    $data/grimm/raw/tales.preprocessed.txt
+cat $data/arabian/raw/nights.cleaned.txt | python $base/scripts/preprocess.py --vocab-size 6000 --tokenize --lang "en" --sent-tokenize > \
+    $data/arabian/raw/nights.preprocessed.txt
 
 # split into train, valid and test
+# Custom split numbers, adjusted according to proportion of the given example split numbers
+head -n 647 $data/arabian/raw/nights.preprocessed.txt | tail -n 591 > $data/arabian/valid.txt
+head -n 1254 $data/arabian/raw/nights.preprocessed.txt | tail -n 607 > $data/arabian/test.txt
+tail -n 4687 $data/arabian/raw/nights.preprocessed.txt | head -n 4406 > $data/arabian/train.txt
 
-head -n 440 $data/grimm/raw/tales.preprocessed.txt | tail -n 400 > $data/grimm/valid.txt
-head -n 840 $data/grimm/raw/tales.preprocessed.txt | tail -n 400 > $data/grimm/test.txt
-tail -n 3075 $data/grimm/raw/tales.preprocessed.txt | head -n 2955 > $data/grimm/train.txt
