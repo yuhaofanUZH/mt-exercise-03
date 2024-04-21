@@ -21,6 +21,7 @@ This repo shows how to train neural language models using [Pytorch example code]
 
 - **install_packages.sh**
   - Added pandas for logging model perplexity.
+  - Added matplotlib for plotting
   - Removed the code to clone Pytorch examples.
 
 - **train.sh** (renamed to train_log_plot.sh)
