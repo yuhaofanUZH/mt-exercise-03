@@ -58,6 +58,8 @@ Download and preprocess data: (You do not need to clone PyTorch examples cause t
 
     ./scripts/download_data.sh
 
+(Note: there will be a FutureWarning, just ignore this)
+
 Train five models with varying dropout rates, then log results and generate plots to compare model efficiency:
 
     ./scripts/train_log_plot.sh
