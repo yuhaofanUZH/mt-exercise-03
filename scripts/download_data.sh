@@ -9,14 +9,6 @@ mkdir -p $data
 
 tools=$base/tools
 
-# link default training data for easier access
-mkdir -p $data/wikitext-2
-
-for corpus in train valid test; do
-    absolute_path=$(realpath $tools/pytorch-examples/word_language_model/data/wikitext-2/$corpus.txt)
-    ln -snf $absolute_path $data/wikitext-2/$corpus.txt
-done
-
 # Download the new custom dataset - Arabian Nights
 mkdir -p $data/arabian
 mkdir -p $data/arabian/raw
